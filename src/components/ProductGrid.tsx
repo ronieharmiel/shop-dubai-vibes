@@ -1,4 +1,7 @@
 import { ProductCard } from "./ProductCard";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // Sample product data - in a real app, this would come from your Facebook page or API
 const sampleProducts = [
@@ -114,12 +117,12 @@ export const ProductGrid = () => {
         </div>
         
         <div className="text-center mt-12">
-          <button className="inline-flex items-center px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-smooth shadow-primary">
-            View All Products
-            <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </button>
+          <Button variant="default" size="lg" asChild>
+            <Link to="/products" className="inline-flex items-center">
+              View All Products
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
